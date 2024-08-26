@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Namaste-React
 
 # parcel(read about this topic)
@@ -16,3 +17,6 @@
 - Error Handling
 - HTTPs
 - Tree Shaking - remove unused code
+=======
+# Namaste-React
+>>>>>>> 3f071f4213ddeab49aebe7b6722efd265074b1ad

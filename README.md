@@ -1,12 +1,13 @@
 # Namaste-React
 
-# parcel(read about this)
+# parcel(read about this topic)
+
 - Dev Build
 - Local Server
 - HMR = Hot Module Replacement
 - File Watching Alogorithm - written in c++
 - Caching - Faster Builds
-- Image Optimization 
+- Image Optimization
 - Bundling
 - Compressing file
 - Consistent Hashing

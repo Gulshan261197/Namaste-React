@@ -1,6 +1,6 @@
 # Namaste-React
 
-# parcel
+# parcel(read about this)
 - Dev Build
 - Local Server
 - HMR = Hot Module Replacement

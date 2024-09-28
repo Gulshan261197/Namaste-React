@@ -1,3 +1,21 @@
-.heading{
-    color:blue;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px solid black;
+}
+
+.Logo{
+    width: 100px;
+}
+
+
+.nav-items > ul{
+    font-size: 20px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
 }

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Namaste-React
 
 # parcel(read about this topic)
@@ -17,6 +17,23 @@
 - Error Handling
 - HTTPs
 - Tree Shaking - remove unused code
-=======
-# Namaste-React
->>>>>>> 3f071f4213ddeab49aebe7b6722efd265074b1ad
+
+# Namaste Food
+
+/**
+ * Header
+ *  -logo
+ *  -Nav Items
+ * Body
+ *  -Search
+ *  -Resturant Cart
+ *  -ResturantCard
+ *      -Img
+ *      -Name of Res, Star Rating, cuisine, delivery time
+ * Footer
+ *  -Copyright
+ *  -Links
+ *  -Address
+ *  -Contact
+ * 
+ */

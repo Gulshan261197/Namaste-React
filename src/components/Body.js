@@ -1,8 +1,10 @@
 import ResturantCard from "./ResturantCard"
 import { useEffect, useState } from "react"
-import resList from "../utils/mockData"
+import Shimmer from "./Shimmer"
 const Body = ()=>{
-    const [restaurantList,setrestaurantList] = useState(resList)
+    const [restaurantList, setrestaurantList] = useState([])
+
+    const [searchText, setSearchText] = useState("")
 
     useEffect(()=>{
         fetchData()
@@ -16,10 +18,24 @@ const Body = ()=>{
         console.log("Swiggy Apis..", json?.data.cards[1].card)
         setrestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
-    return (
+
+    return restaurantList.length === 0? <Shimmer/> : (
         <div className="Body">
        
             <div className="filter">
+            <div className="search">
+                <input 
+                type="text" 
+                className="search-bar" 
+                value={searchText}
+                onChange={(e)=>{
+                    setSearchText(e.target.value)
+                }}
+                />
+                <button onClick={()=>{
+                    //filter the restaurant cards and update the UI
+                }} >Search</button>
+            </div>
                 <button className="filter-btn" onClick={()=>{
                 const a = resList.filter(res=>res.data.avgRating>4)
                 setrestaurantList(a)

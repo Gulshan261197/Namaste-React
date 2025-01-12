@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
 const Body = ()=>{
     const [restaurantList, setrestaurantList] = useState([])
+    const [filteredRestaurant, setFilteredRestaurant] = useState([])
 
     const [searchText, setSearchText] = useState("")
 
@@ -17,6 +18,7 @@ const Body = ()=>{
         const json =await data.json()
         console.log("Swiggy Apis..", json?.data.cards[1].card)
         setrestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     return restaurantList.length === 0? <Shimmer/> : (
@@ -34,6 +36,10 @@ const Body = ()=>{
                 />
                 <button onClick={()=>{
                     //filter the restaurant cards and update the UI
+                const filteredRestaurant =  restaurantList.filter(
+                    (res)=>res.json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.name.toLowerCase().includes(searchText).toLowerCase()
+                )
+                setFilteredRestaurant(filteredRestaurant)
                 }} >Search</button>
             </div>
                 <button className="filter-btn" onClick={()=>{
@@ -43,7 +49,7 @@ const Body = ()=>{
             </div>
             <div className="res-container">
             {
-                restaurantList.map((resturant)=>{
+                filteredRestaurant.map((resturant)=>{
                 return <ResturantCard key={resturant?.info?.cloudinaryImageId} resData={resturant?.info}/>
 
                }) 
